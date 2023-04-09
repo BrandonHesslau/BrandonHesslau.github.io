@@ -1,0 +1,267 @@
+@font-face {
+    font-family: Titillium;
+    font-weight: bold;
+    src: url('Fonts/TitilliumWeb-Black.ttf');
+  }
+
+@font-face {
+    font-family: Titillium;
+    font-weight:normal;
+    src: url('Fonts/TitilliumWeb-SemiBold.ttf');
+  }
+
+
+
+body {
+    font-family: Titillium, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #709890, #4c4353);
+
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+
+h1, h3 {
+  color: #ffffff;
+  margin: 0;
+}
+ 
+h1 {
+  font-size: 4rem; /* or any other size that you prefer */
+}
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  
+  .project {
+    margin-bottom: 2rem;
+    position: relative;
+    border: 1px solid #D3D3D3;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  .code {
+    overflow: auto;
+  }
+  
+
+  
+  pre {
+    white-space: pre-wrap; /* Allows lines to wrap in long code blocks */
+    word-wrap: break-word; /* Breaks long words to prevent overflow */
+    max-height: 400px; /* Sets maximum height of code area */
+  }
+  .year {
+    text-align: right;
+  }
+  .title-year-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .project:not(.open):hover {
+    transform: scale(1.03);
+  }
+  
+  .slick-slide {
+    height: 400px;
+    width: 800px;
+  }
+
+  h2 {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: #262626;
+  }
+  
+  h3 {
+    font-weight: normal;
+
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .view-more {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .view-more:hover {
+    background-color: #555;
+  }
+  
+  .line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #D3D3D3;
+  }
+  
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    max-width: 100%;
+  }
+
+  #contact {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  nav a {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  nav a:active {
+    background-color: #777;
+  }
+  
+  nav a:focus {
+    outline: none;
+  }
+  
+  header img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.short-line {
+  border: none;
+  border-top: 2px solid #ccc;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+.buttons-container a:hover {
+  background-color: #555;
+}
+
+.buttons-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 0.75rem;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+
+}
+
+.buttons-container a:hover {
+  background-color: #555;
+}
+
+.buttons-container a i {
+  font-size: 1.75rem;
+}
+
+.twitter-icon:before {
+  content: "\f099";
+}
+
+.github-icon:before {
+  content: "\f09b";
+}
+
+.about-me-container{
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+
+.skills-list{
+list-style: none; display: inline-block; text-align: left;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 0;
+}
