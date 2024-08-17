@@ -1,24 +1,62 @@
-@font-face {
-    font-family: Titillium;
-    font-weight: bold;
-    src: url('Fonts/TitilliumWeb-Black.ttf');
-  }
-
-@font-face {
-    font-family: Titillium;
-    font-weight:normal;
-    src: url('Fonts/TitilliumWeb-SemiBold.ttf');
-  }
 
 
+main {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+main.fade-out {
+    opacity: 0;
+    transform: scale(0.95/3);
+}
+
+main.fade-in {
+    opacity: 1;
+    transform: scale(1.05/3);
+}
+
+main.bounce {
+    animation: bounce 0.25s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
 
 body {
-    font-family: Titillium, Arial, sans-serif;
+    font-family: monospace;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #709890, #4c4353);
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+#typing {
+  font-family: monospace; /* Makes the text look more like it's being typed */
+  white-space: nowrap; /* Keeps the text on one line */
+  overflow: hidden; /* Hides the text that overflows */
+  border-right: 0.15em solid; /* Creates the blinking cursor effect */
+  width: 0; /* Starts with no visible width */
+  animation: typing 2.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+  text-align: center;
 
 }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
 
 
 header {
@@ -39,7 +77,9 @@ h1, h3 {
 }
  
 h1 {
-  font-size: 4rem; /* or any other size that you prefer */
+  font-size: 3rem; /* or any other size that you prefer */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* Adjust the values as needed */
+
 }
 
   main {
@@ -48,19 +88,30 @@ h1 {
     padding: 2rem;
   }
 
-  
+  ul li a {
+    color: #ff5733; /* Replace with your desired color */
+    text-decoration: none; /* Optional: Remove underline */
+    transition: color 0.3s ease; /* Optional: Smooth transition on hover */
+}
+
+ul li a:hover {
+    color: #c13c1f; /* Replace with your desired hover color */
+}
   .project {
     margin-bottom: 2rem;
     position: relative;
-    border: 1px solid #D3D3D3;
-    background-color: #fff;
+    border: 3px solid #fff;
+    background-color: rgba(60, 87, 80, 1); /* Add some transparency to see the blur effect */
     padding: 1rem;
-    border-radius: 4px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+
   }
+  
   .code {
+	      background-color: #fff; /* Add some transparency to see the blur effect */
+
     overflow: auto;
   }
   
@@ -88,19 +139,57 @@ h1 {
     width: 800px;
   }
 
+.circle-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Ensure it stays in the background */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20px); /* Adjust the 20px to your preferred circle size */
+    grid-template-rows: repeat(auto-fill, 20px); 
+	background-color: #709890;
+
+}
+
+.circle-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #fff 5%, transparent 5%);
+    background-size: 20px 20px, 20px 20px; /* First value is for the grid, second is for the gradient */
+    background-position: 0 0, 0 0; /* Position both backgrounds at the top-left */
+	}
+
+   .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            transition: transform 0.2s ease;
+        }
+
   h2 {
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 1.5rem;
-    color: #262626;
+    color: #ffffff;
+	
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* Adjust the values as needed */
+
   }
   
   h3 {
     font-weight: normal;
 
     margin-top: 0.5rem;
-    color: #666;
+  color: #ffffff;
     font-size: 1rem;
   }
   
@@ -109,7 +198,7 @@ h1 {
     overflow: hidden;
     transition: max-height 0.5s ease-out;
     font-size: 0.8rem;
-    color: #666;
+    color: #fff;
   }
   
   .view-more {
@@ -137,7 +226,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #D3D3D3;
+    background-color: #fff;
   }
   
   .video-container {
@@ -148,7 +237,7 @@ h1 {
   }
 
   #contact {
-    background-color: #fff;
+    background-color: rgba(60, 87, 80, 1);
     padding: 20px;
     margin-top: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -162,33 +251,46 @@ h1 {
     height: 100%;
   }
 
-  nav {
+ nav {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
-  }
-  
-  nav a {
-    background-color: #333;
+}
+
+nav a {
+    background-color: #709890;
     color: #fff;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
     margin: 0 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     text-decoration: none;
-  }
-  
-  nav a:hover {
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover and scale */
+}
+
+nav a:hover,
+nav a:focus {
     background-color: #555;
-  }
-  
-  nav a:active {
+}
+nav a:active {
     background-color: #777;
-  }
-  
-  nav a:focus {
-    outline: none;
-  }
+    transform: scale(0.95); /* Slightly scale down on click */
+}
+
+/* Adding the bounce effect after clicking */
+nav a:active {
+    animation: bounce 0.2s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+}
   
   header img {
     display: block;
@@ -224,7 +326,9 @@ h1 {
   width: 50px;
   height: 50px;
   margin: 0 0.75rem;
-  background-color: #333;
+  background-color: #709890;
+      border: 2px solid #fff; /* Adds a white border */
+
   color: #fff;
   text-align: center;
   border-radius: 50%;
