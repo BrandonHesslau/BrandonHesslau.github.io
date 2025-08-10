@@ -150,7 +150,7 @@ ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fill, 20px); /* Adjust the 20px to your preferred circle size */
     grid-template-rows: repeat(auto-fill, 20px); 
-	background-color: #709890;
+	background-color: #161616;
 
 }
 
@@ -161,7 +161,7 @@ ul li a:hover {
     left: 0;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, #fff 5%, transparent 5%);
+    background: radial-gradient(circle, #2c2c2c 5%, transparent 5%);
     background-size: 20px 20px, 20px 20px; /* First value is for the grid, second is for the gradient */
     background-position: 0 0, 0 0; /* Position both backgrounds at the top-left */
 	}
